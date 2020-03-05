@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta property="og:image" content="https://www.newsfeedanalysis.app/static/ressources/Redditplot1_20190410.png" />
+    <title>Twitter Newsfeedanalysis</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="/static/css/jumbotron-narrow.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <style>
+        /* GENERAL PAGE SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .jumbotron{
+            background: url("./static/ressources/news1.png");
+            background-size: cover;
+        }
+        .pop-out
+        {
+            transition: transform .5s;
+        }
+
+        .pop-out:hover
+        {
+            -ms-transform: scale(1.8, 1.8);
+            -webkit-transform: scale(1.8, 1.8);
+            transform: scale(1.8, 1.8);
+        }
+        .footer, .push {
+            height: 168px; /* .push must be the same height as .footer */
+        }
+
+        /* FOOTER SETTINGS */
+        .footer {
+            clear: both;
+            width: 100%;
+        }
+
+        .footer_container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .footer .left {
+            float: left;
+            width: 50%;
+            position: relative;
+        }
+
+        .footer .right {
+            float: right;
+            width: 50%;
+            position: relative;
+        }
+        #jumbotronheadline { 
+              color : #F8766D; 
+              font-family: 'Bangers', serif;
+              font-size: 48px;
+          }   
+        #headerline { 
+              color : #C24947; 
+              font-family: 'Roboto', serif;
+              font-size: 30px;
+          }   
+    </style>
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills nav-fill pull-right">
+                    <li role="presentation" class="active"><a href="/">Home</a>
+                    </li>
+                    <li role="presentation"><a href="cv">CV</a>
+                    </li>  
+                    <li role="presentation"><a href="projects">Projects</a>
+                    </li>
+                    <li role="presentation"><a href="contact">Contact</a>
+                    </li>
+                </ul>                
+            </nav>   
+            <a href="/"><p id="headerline">Philipp Kling</p></a>
+        </div>
+        <div class="row marketing">            
+            <div class="col-lg-6">
+                <p align = "justify" style="font-size: 130%;">I’m a doctoral candidate in computational social science at the <a href="https://www.gsds.uni-konstanz.de/" target="_blank">Graduate School of Decision Sciences</a> and a research associate at the <a href="https://www.polver.uni-konstanz.de/en/cdm/" target="_blank">Center for Data and Methods</a> at the <a href="https://www.uni-konstanz.de/en/" target="_blank">University of Konstanz</a> in Germany. </p>
+            </div>
+            <div class="col-lg-6">
+                <img class="pop-out" style='height: 100%; width: 100%; object-fit: contain' src="../static/ressources/photo_gsds.jpg" alt="Picture taken for the homepage of the GSDS." align="right">
+            </div>
+            <div class="col-lg-12">
+                <hr />
+            </div>
+            <div class="col-lg-12">
+                <p align="justify" style="font-size: 130%;">
+                    In my dissertation, I analyze social media users' consumption awareness. In particular, I focus on the accuracy of Twitter users' statements about their online activity and the political heterogeneity of their Twitter network. Further, I analyze the normative perceptions of biased news diets. My work utilizes online surveys in addition to analyses of social media data. I received both my BA (Major in Sociology, Minor in Statistics) and my MSc (Social and Economic Data Analysis) from the University of Konstanz.
+                </p>
+                <br \>
+            </div>                     
+        </div>
+ 
+        <footer class="footer">
+            <div class="footer_container">                
+                <div class="left">
+                    <p>&copy; Philipp Kling 2020</p>
+                </div>                
+                <div class="right">
+                    <a href="https://twitter.com/share" 
+                       class="twitter-share-button" 
+                       align="right" 
+                       data-url="www.philipp-kling.com" 
+                       data-text="This is Philipp Kling. A PhD candidate at the University of Konstanz analyzing social media data and survey results." 
+                       data-size="large">Share
+                    </a>
+                    <script>!function(d,s,id){
+                            var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+                            if(!d.getElementById(id)){
+                                js=d.createElement(s);
+                                js.id=id;
+                                js.src=p+"://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js,fjs);
+                            }
+                        }(document, "script", "twitter-wjs");
+                    </script>
+                </div>                
+            </div>
+        </footer> 
+    </div>   
+</body>
+ 
+</html>

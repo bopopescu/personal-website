@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta property="og:image" content="https://www.newsfeedanalysis.app/static/ressources/Redditplot1_20190410.png" />
+    <title>Twitter Newsfeedanalysis</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/jumbotron-narrow.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <style>
+        /* GENERAL PAGE SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .jumbotron{
+            background: url("./static/ressources/news1.png");
+            background-size: cover;
+        }
+        .pop-out
+        {
+            transition: transform .5s;
+        }
+
+        .pop-out:hover
+        {
+            -ms-transform: scale(1.8, 1.8);
+            -webkit-transform: scale(1.8, 1.8);
+            transform: scale(1.8, 1.8);
+        }
+        .footer, .push {
+            height: 168px; /* .push must be the same height as .footer */
+        }
+
+        /* FOOTER SETTINGS */
+        .footer {
+            clear: both;
+            width: 100%;
+        }
+
+        .footer_container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .footer .left {
+            float: left;
+            width: 50%;
+            position: relative;
+        }
+
+        .footer .right {
+            float: right;
+            width: 50%;
+            position: relative;
+        }
+        #jumbotronheadline { 
+              color : #F8766D; 
+              font-family: 'Bangers', serif;
+              font-size: 48px;
+          }   
+        #headerline { 
+              color : #C24947; 
+              font-family: 'Bangers', serif;
+              font-size: 30px;
+          }   
+    </style>
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills nav-fill pull-right">
+                    <li role="presentation"><a href="/">Home</a>
+                    </li>
+                    <li role="presentation"><a href="about">About</a>
+                    </li>  
+                    <li role="presentation" class="active"><a href="method">Methodology</a>
+                    </li>
+                    <li role="presentation"><a href="results">Results</a>
+                    </li>
+                </ul>                
+            </nav>   
+            <a href="survey"><p id="headerline">Twitter Newsfeed Analysis</p></a>
+        </div>
+ 
+        <div class="row marketing">
+            <div class="col-lg-12">
+                <h3>The Method</h3>
+                <p align = "justify" style="font-size: 130%;">
+                    The basic indicators in this study come from an algorithm, that
+                    <strong>analyzes the persons you follow on Twitter</strong>
+                    who form the largest part of your 
+                    newsfeed (apart from advertisements included by Twitter itself). The script
+                    <strong>has a list of Twitter users</strong>
+                    (mostly politicians and news outlets) whose 
+                    <strong>political ideology has been confirmed.</strong>
+                    Then, simply put, the algorithm counts the number of persons you follow in either direction (liberal or conservative) and calculates a score representing the
+                    <strong>balance of your follower list.</strong>
+                </p>
+                <hr/>
+                <div title="Exemplary display of how the algorithm can use the friends of a Twitter user." style="text-align: center;">
+                    <img src="../static/ressources/Userfriends.png" width="80%"/>
+                </div>
+                <hr/>
+                <p align = "justify" style="font-size: 130%;">
+                    In a second step, the method is extended by persons who are predominantly followed by left- or right-leaning users and are therefore 
+                    also relatively safe to incorporate in the analysis (in addition to politicians and news outlets).
+                </p>
+                <p align = "justify" style="font-size: 130%;">
+                    More specifically, the algorithm supposes that every user has a
+                    <strong>probability to follow another Twitter user.</strong>
+                    This probability is influenced by the level 
+                    of the
+                    <strong>political interest</strong>
+                    of the following user and the
+                    <strong>ideological distance</strong>
+                    between the user chosing to follow and the user being followed. 
+                    The algorithm also
+                    <strong>accounts for the popularity</strong>
+                    of users: e.g. politicians such as
+                    <strong>@BarackObama</strong>
+                    or
+                    <strong>@realDonaldTrump</strong>
+                    have a higher chance of being followed by a random user than regular 
+                    <strong>senators.</strong>
+                </p>
+                <hr/>
+                <h3>References</h3>
+                <p align = "justify" style="font-size: 130%;">
+                    The calculations and the script are taken from Prof. Dr.
+                    <a href="http://pablobarbera.com/" target="blank_">Pablo Barberá</a>
+                    . You can find and use his scripts with the program 
+                    <strong>
+                        <a href="https://cran.r-project.org/" target="blank_">R</a>
+                    </strong>
+                    by installing the 
+                    <a href="https://github.com/pablobarbera/twitter_ideology" target="blank_">tweetscores</a>
+                    package. Please also have a look at the scientific publications using this script:
+                </p>
+                <ul> 
+                    <li style="font-size: 130%;">
+                        Barberá, P. (2015). Birds of the Same Feather Tweet Together: Bayesian Ideal Point Estimation Using Twitter Data. Political Analysis, 23(1), 76-91. <a target='blank_' href='https://doi.org/10.1093/pan/mpu011'>DOI</a>
+                    </li>
+                    <li style="font-size: 130%;">
+                        Barberá, P., John Jost, Jonathan Nagler, Joshua Tucker and Richard Bonneau (2015). Tweeting from Left to Right: Is Online Political Communication More Than an Echo Chamber?. Psychological Science, 26(10), 1531-1542. <a target='blank_' href='https://doi.org/10.1177/0956797615594620'>DOI</a>
+                    </li> 
+                </ul>
+            <hr/>
+            <p align = "justify" style="font-size: 130%;">
+                The survey was built with 
+                <a href="https://www.unipark.com/" target="blank_">Unipark</a>
+                and the results-website was created with a 
+                <a href="https://shiny.rstudio.com/" target="blank_">Shiny</a>
+                framework, published via a 
+                <a href="https://www.rstudio.com/products/shiny/shiny-server/" target="blank_">Shiny-server</a>
+                which was hosted on a virtual machine of the
+                <a href="https://www.uni-konstanz.de/en/" target="blank_">University of Konstanz</a>. This website is programmed in <a href="http://flask.pocoo.org/" target="blank_">Python Flask</a>.
+                </p>                
+                <br/>
+            </div>            
+            <div class="col-lg-12" align="center">
+                <a class="btn btn-lg btn-primary" href="survey" role="button"><strong>Analyze my Twitter-newsfeed</strong></a>  
+            </div>  
+        </div>
+ 
+        <footer class="footer">
+            <div class="footer_container">
+                
+                <div class="left">
+                    <p>&copy; Philipp Kling 2019</p>
+                </div>
+                
+                <div class="right">
+                    <a href="https://twitter.com/share" 
+                       class="twitter-share-button" 
+                       align="right" 
+                       data-url="https://www.newsfeedanalysis.app!" 
+                       data-text="This Ph.D.-project about echo chambers visualizes the ideological tendency of your Twitter newsfeed. To get an evaluation of your own head over to " 
+                       data-size="large">Share
+                    </a>
+                    <script>!function(d,s,id){
+                            var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+                            if(!d.getElementById(id)){
+                                js=d.createElement(s);
+                                js.id=id;
+                                js.src=p+"://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js,fjs);
+                            }
+                        }(document, "script", "twitter-wjs");
+                    </script>
+                </div>                
+            </div>
+        </footer> 
+ 
+    </div>
+</body>
+ 
+</html>
+

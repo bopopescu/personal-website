@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta property="og:image" content="https://www.newsfeedanalysis.app/static/ressources/Redditplot1_20190410.png" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+        <!-- This is a font for the headline -->
+        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+        <style>
+            .navbar {
+                background-color: "#619CFF";
+            }
+            .navbar .active {
+                background-color: "#619CFF";            }
+            .navbar-toggle {
+                background-color: "#619CFF";
+            }
+            .icon-bar {
+                background-color: blue;
+            }
+            .navbar-wrapper {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 20;
+            }
+            /* Flip around the padding for proper display in narrow viewports */
+            .navbar-wrapper > .container {
+                padding-right: 0;
+                padding-left: 0;
+            }
+            .navbar-wrapper .navbar {
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+            .navbar-wrapper .navbar .container {
+                width: auto;
+            }
+            #jumbotronheadline { 
+                color : #F8766D; 
+                font-family: 'Bangers', serif;
+                font-size: 48px;
+            }     
+            #mobileheaderline {
+                color : #F8766D; 
+                font-family: 'Bangers', serif;
+                font-size: 22px;
+            }
+            #myImg {
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            #myImg:hover {opacity: 0.7;}
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            }
+
+            /* Modal Content (image) */
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+
+            /* Caption of Modal Image */
+            #caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 150px;
+            }
+
+            /* Add Animation */
+            .modal-content, #caption {  
+                -webkit-animation-name: zoom;
+                -webkit-animation-duration: 0.6s;
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @-webkit-keyframes zoom {
+                from {-webkit-transform:scale(0)} 
+                to {-webkit-transform:scale(1)}
+            }
+
+            @keyframes zoom {
+                from {transform:scale(0)} 
+                to {transform:scale(1)}
+            }
+
+            /* The Close Button */
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* 100% Image Width on Smaller Screens */
+            @media only screen and (max-width: 700px){
+                .modal-content {
+                    width: 100%;
+                }
+            }
+            .footer, .push {
+                height: 168px; /* .push must be the same height as .footer */
+            }
+
+            /* FOOTER SETTINGS */
+            .footer {
+                clear: both;
+                width: 100%;
+            }
+
+            .footer_container {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .footer .left {
+                float: left;
+                width: 50%;
+                position: relative;
+            }
+
+            .footer .right {
+                float: right;
+                width: 50%;
+                position: relative;
+            }
+
+        </style>
+        <title>Twitter Newsfeed Analysis</title>
+        <link href="css/styles.css" />
+    </head>
+    <body>
+        <div class="navbar-wrapper">
+            <div class="container-fluid">
+                <nav class="navbar navbar-default navbar-static-top">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="survey"><p id="mobileheaderline">Twitter Newsfeed Analysis</p></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/" aria-label="Home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Home</a></li>
+                            <li class="active"><a href="about" aria-label="About"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>  About</a></li>
+                            <li><a href="method" arial-label="Methodology"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>  Methodology</a></li>
+                            <li><a href="results" arial-label="Results"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span>  Results</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid marketing">
+                    <!-- Three columns of text below the carousel -->
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <h4>Project</h4>
+                            <p align="justify">
+                                This research project is part of my Ph.D. efforts, where I aim to shed light on determinants and the awareness of online media consumption. By using this application, you contribute to cutting edge scientific approaches to understand societal problems such as <i>echo chambers.</i>
+                            </p>
+                            <hr>
+                            <h4>Data security</h4>
+                            <p align="justify">
+                                When authorizing the app, the algorithm retrieves a list of users you follow on Twitter (which is in most cases publicly available anyway) and bases its estimation on this information. The procedure complies with the European General Data Protection Regulation (EU-GDPR) and you can find the data security form <a href="static\ressources\DataSecurityForm.pdf" target="_blank">here</a>.
+                            </p>         
+                            <hr>
+                            <h4>Responsible Person</h4>              
+                            <p>
+                                <strong>Philipp Kling</strong><br />
+                                <a href="https://www.polver.uni-konstanz.de/cdm/people/students/kling/">Ph.D. Student</a>
+                                at the <a href="https://www.uni-konstanz.de/en/">University of Konstanz</a><br />
+                                Email: <a href="mailto:newsfeedanalysis@gmail.com">newsfeedanalysis[at]gmail.com</a>
+                            </p>             
+                            <a href="mailto:newsfeedanalysis@gmail.com">     
+                                <button id="email_philipp" type="button" class="btn btn-default action-button">
+                                    <i class="fa fa-envelope"></i>Write Philipp</button>
+                            </a>
+                            <br \>
+                            <br \>
+                            <div align="center">
+                                <a class="btn btn-lg btn-danger" href="survey" role="button" align="center">Analyze my Twitter-newsfeed</a> 
+                            </div>
+                            <br \> 
+                            <br \>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer_container">                
+                    <hr>
+                    <div class="left">
+                        <p>  &copy; Philipp Kling 2019</p>
+                    </div>                
+                    <div class="right">
+                        <a href="https://twitter.com/share" 
+                           class="twitter-share-button" 
+                           align="right" 
+                           data-url="https://www.newsfeedanalysis.app!" 
+                           data-text="This Ph.D.-project about echo chambers visualizes the ideological tendency of your Twitter newsfeed. To get an evaluation of your own head over to " 
+                           data-size="large">Share
+                        </a>
+                        <script>!function(d,s,id){
+                                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+                                if(!d.getElementById(id)){
+                                    js=d.createElement(s);
+                                    js.id=id;
+                                    js.src=p+"://platform.twitter.com/widgets.js";
+                                    fjs.parentNode.insertBefore(js,fjs);
+                                }
+                            }(document, "script", "twitter-wjs");
+                        </script>
+                    </div>                
+                </div>
+            </footer> 
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        </div>
+    </body>
+</html>
