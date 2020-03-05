@@ -1,115 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
- 
-<head>
-    <meta property="og:image" content="https://www.newsfeedanalysis.app/static/ressources/photo_gsds.jpg" />
-    <title>Philipp Kling</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">    
-    <link rel="stylesheet" type="text/css" href="/static/css/jumbotron-narrow.css">
-    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-    <style>
-        /* GENERAL PAGE SETTINGS */
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        .jumbotron{
-            background: url("./static/ressources/news1.png");
-            background-size: cover;
-        }
-        .pop-out
-        {
-            transition: transform .5s;
-        }
-
-        .pop-out:hover
-        {
-            -ms-transform: scale(1.8, 1.8);
-            -webkit-transform: scale(1.8, 1.8);
-            transform: scale(1.8, 1.8);
-        }
-        .footer, .push {
-            height: 168px; /* .push must be the same height as .footer */
-        }
-
-        /* FOOTER SETTINGS */
-        .footer {
-            clear: both;
-            width: 100%;
-        }
-
-        .footer_container {
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .footer .left {
-            float: left;
-            width: 50%;
-            position: relative;
-        }
-
-        .footer .right {
-            float: right;
-            width: 50%;
-            position: relative;
-        }
-        #jumbotronheadline { 
-              color : #F8766D; 
-              font-family: 'Bangers', serif;
-              font-size: 48px;
-          }   
-        #headerline { 
-              color : #C24947; 
-              font-family: 'Roboto', serif;
-              font-size: 30px;
-          }   
-    </style>
-</head>
- 
+<html>
+<title>Philipp Kling</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/static/ressources/photo_gsds_smile_greyscale.png');
+  min-height: 100%;
+}
+</style>
 <body>
-    <div class="container">
-        <div class="header">
-            <nav>
-                <ul class="nav nav-pills nav-fill pull-right">
-                    <li role="presentation" class="active"><a href="/">Home</a>
-                    </li>
-                    <li role="presentation"><a href="cv">CV</a>
-                    </li>  
-                    <li role="presentation"><a href="projects">Projects</a>
-                    </li>
-                    <li role="presentation"><a href="contact">Contact</a>
-                    </li>
-                </ul>                
-            </nav>   
-            <a href="/"><p id="headerline">Philipp Kling</p></a>
-        </div>
-        <div class="row marketing">            
-            <div class="col-lg-6">
-                <p align = "justify" style="font-size: 130%;">I’m a doctoral candidate in computational social science at the <a href="https://www.gsds.uni-konstanz.de/" target="_blank">Graduate School of Decision Sciences</a> and a research associate at the <a href="https://www.polver.uni-konstanz.de/en/cdm/" target="_blank">Center for Data and Methods</a> at the <a href="https://www.uni-konstanz.de/en/" target="_blank">University of Konstanz</a> in Germany. </p>
-            </div>
-            <div class="col-lg-6">
-                <img class="pop-out" style='height: 100%; width: 100%; object-fit: contain' src="../static/ressources/photo_gsds.jpg" alt="Picture taken for the homepage of the GSDS." align="right">
-            </div>
-            <div class="col-lg-12">
-                <hr />
-            </div>
-            <div class="col-lg-12">
-                <p align="justify" style="font-size: 130%;">
-                    In my dissertation, I analyze social media users' consumption awareness. In particular, I focus on the accuracy of Twitter users' statements about their online activity and the political heterogeneity of their Twitter network. Further, I analyze the normative perceptions of biased news diets. My work utilizes online surveys in addition to analyses of social media data. I received both my BA (Major in Sociology, Minor in Statistics) and my MSc (Social and Economic Data Analysis) from the University of Konstanz.
-                </p>
-                <br \>
-            </div>                     
-        </div>
- 
-        <footer class="footer">
-            <div class="footer_container">                
-                <div class="left">
-                    <p>&copy; Philipp Kling 2020</p>
-                </div>               
-            </div>
-        </footer> 
-    </div>   
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#research" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Research</a>
+    <a href="#cv" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">CV</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Philipp Kling</b></h1>
+    <p>PhD Candidate at the University of Konstanz.</p>
+    <img src="/static/ressources/photo_gsds_smile_greyscale.png" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="/static/ressources/photo_gsds_smile_greyscale.png" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>About</h2>
+    <p>I’m a doctoral candidate in computational social science at the <a href="https://www.gsds.uni-konstanz.de/" target="_blank">Graduate School of Decision Sciences</a> and a research associate at the <a href="https://www.polver.uni-konstanz.de/en/cdm/" target="_blank">Center for Data and Methods</a> at the <a href="https://www.uni-konstanz.de/en/" target="_blank">University of Konstanz</a> in Germany.<p>
+
+    <p>In my dissertation, I analyze social media users' consumption awareness. In particular, I focus on the accuracy of Twitter users' statements about their online activity and the political heterogeneity of their Twitter network. Further, I analyze the normative perceptions of biased news diets. My work utilizes online surveys in addition to analyses of social media data. My dissertation is chaired by <a href="https://www.karstendonnay.net/">Karsten Donnay</a>, <a href="https://www.polver.uni-konstanz.de/cdm/people/selb/">Peter Selb</a> and <a href="http://pablobarbera.com/">Pablo Barber&aacute;</a>. I received both my BA (Major in Sociology, Minor in Statistics) and my MSc (Social and Economic Data Analysis) from the University of Konstanz.</p>
+
+    <p>I mainly use <a href="https://www.python.org/">Python</a> to retrieve the data used in my disseration, while I employ SQL-databases accessed via <a href="https://www.python.org/">MariaDB</a> to maintain the huge datasets social media data might generate. In order to finally make sense of the data, I utilize <a href="">R</a> to employ models and visualize my results. Additionally, I use the <a href="https://www.unipark.com/en/survey-software/">EFS</a> software to create surveys and experiments, which I complemented in one project with an additional <a href="newsfeedanalysis.app">website</a> programmed in <a href="https://www.fullstackpython.com/flask.html">Python Flask</a>. To guarantee everything runs smoothly, I utilize the remote Linux servers hosted by <a href="">BWScope</a> and the <a href="">University of Konstanz</a>. As I work with sensible data, I also became a semi-expert on data privacy and the regulations of the <a href="https://gdpr.eu/">EU-GDPR</a>.</p>
+
+    <p>In my free time, I enjoy playing the guitar, painting, dancing <a href="https://www.swinginkonstanz.de/">Lindy Hop</a> and other social dances, and spending time outside. As I live in Konstanz, the mountains are close and offer plenty of opportunities to go skiing or hiking.</p>
+  </div>
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="research">
+    <hr class="w3-opacity">
+    <h2>Research</h2>
+    <p>My dissertation consists of three main projects and several side projects. Below I outline the work done and the purpose of several projects.</p>
+
+    <h5>Project 1: Awareness of the political alignment of one's own Twitter network.</h5>
+    <p>In this project I utilize the results of a survey conducted by <a href="http://today.yougov.com/" target="_blank">YouGov</a> and provided by <a href="http://pablobarbera.com/" target="_blank">Pablo Barber&aacute;</a> and colleagues in order to evaluate Twitter user's awareness of the political alignment of their Twitter friends. I complemented the survey data with data retrieved from the Twitter API in an effort that included the retrieval of Twitter profile information of 246.693 Twitter users. We find that Twitter users' perceptions are biased by a False Consensus Effect and that political knowledge helps identify the most frequent political group among one's Twitter friends. This project is the first to analyze the perceptions about the political constitution of one's Twitter friends and employs a novel approach by utilizing the procedure of <a href="https://github.com/pablobarbera/twitter_ideology">Pablo Barber&aacute;'s Tweetscores</a>. Below is a link to the current draft version.</p>
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <i class="fa fa-download"></i> <a href="/static/ressources/drafts/project1_draft.pdf" target="_blank">Download Current Draft Version</a>
+    </button>
+
+    <hr class="w3-opacity">
+    <h5>Project 2: Awareness of own Twitter activity and implications of misreporting for social science.</h5>
+    <p>In this project I employed a survey via several platforms (<a href="https://www.respondi.com/EN/" target="_blank">Respondi</a>, <a href="https://www.jobboy.com/" target="_blank">JobBoy</a>, <a href="https://ads.twitter.com/" target="_blank">Twitter Ads</a>) in order to compare the quality of self reported Twitter activity. I compared survey responses to questions regarding one's Twitter activity with observed activity. Results suggest that people generally misreport their own activity and these results have implications for the treatment of survey responses in general. Additionally, I find a significant impact of intrinsic motivation for the quality of survey responses and I discuss the potential remedies to this problem of misreporting.</p>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <i class="fa fa-download"></i> <a href="/static/ressources/drafts/project2_draft.pdf" target="_blank">Download Current Draft Version</a>
+    </button>
+    <hr class="w3-opacity">
+    <h5>Project 3: Awareness of the political alignment of Twitter networks and the perceived need for changes to these networks.</h5>
+    <p>In this project I analyze the ability to detect political slant in Twitter networks and the normative evaluations of these slants by distributing a vignette experiment to <a href="https://www.mturk.com/" target="_blank">Amazon mechanical turk workers</a>. </p>
+    <hr class="w3-opacity">
+    <h5>Side Project 1: Towards a classifier for political ideology of German Twitter users.</h5>
+    <p>In a joint project with <a href="https://www.sowi.uni-mannheim.de/debus/team/akademische-mitarbeiterinnen-und-mitarbeiter/saeltzer-marius/" target="_blank">Marius Sältzer</a> from the <a href="https://www.uni-mannheim.de/en/" target="_blank">University of Mannheim</a> I am working towards a classifier that enables the classification of German Twitter users' political ideology. The work includes the analysis of more than 8 mio Followers of German political elites and news outlets and encompasses a methodology that is similar to the procedure of <a href="https://github.com/pablobarbera/twitter_ideology">Pablo Barber&aacute;'s Tweetscores</a>.</p>
+    <hr class="w3-opacity">
+    <h5>Side Project 2: `Fine People on Both Sides': How the Sharing of Images Shapes Contentious Politics.</h5>
+    This project is joint work with <a href="https://www.karstendonnay.net/">Karsten Donnay</a>, <a href="https://zacharyst.com/" target="_blank">Zachary Steinert-Threkeld</a> and others and includes analyses of 806,937 images shared on Twitter around the events of Charlottesville in 2018. Below is an abstract of the current draft.
+    <blockquote>
+      Social media has changed the way contentious politics are covered, allowing new participants to shape coverage. These new participants include citizen journalists and the activists themselves--and they emphasize different components of contentious events compared to traditional media. This paper substantiates this argument with an analysis of 806,937 images shared by traditional media and non-media accounts on Twitter before, during, and after the August 11, 2017 Unite the Right rally in Charlottesville, Virginia.  A racist gathering started to protest the removal of Confederate statues, the event received extensive coverage from the media and individuals across the political spectrum. Across fourteen themes and five hashtags, there exists little cross-sectional overlap of the kinds of images shared by media and individuals use.  The average partisanship of media and non-media tend to change in parallel, though media are consistently more moderate than liberal or conservative non-media accounts.  The media tend towards neutral, centrist representations while individuals polarize into liberal and conservative camps.  The paper concludes with a discussion of the role of computational methodologies in communications research.
+    </blockquote>
+    <hr class="w3-opacity">
+  </div>
+
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="cv">
+    <h2>CV</h2>
+    <hr class="w3-opacity">
+    <p>Below you can find the most recent version of my CV.</p>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <i class="fa fa-download"></i> <a href="/static/ressources/cv.pdf" target="_blank">Download CV</a>
+    </button>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+    <h2>Contact Me</h2>
+    <hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Konstanz, Germany</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +49 7531 88 3225</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> <a href="mailto:philipp.kling@uni-konstanz.de">philipp.kling[at]uni-konstanz.de</a></p>
+    </div>
+
+  <!-- End Contact Section -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <a href="https://twitter.com/KlingPhilipp" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/philipp-kling-20bb2512b" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
 </body>
- 
 </html>
