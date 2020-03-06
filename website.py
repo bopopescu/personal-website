@@ -25,21 +25,6 @@ def favicon():
 def home(template):
     return render_template(template)
 
-@app.route("/cv")
-@mobile_template("{mobile/}cv.html")
-def about(template):
-    return render_template(template)
-
-@app.route("/projects")
-@mobile_template("{mobile/}projects.html")
-def method(template):
-    return render_template(template)
-
-@app.route("/contact")
-@mobile_template("{mobile/}contact.html")
-def results(template):
-    return render_template(template)
-
     
 if __name__ == "__main__":
     app.run(threaded=True, host='0.0.0.0')
