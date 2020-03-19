@@ -21,7 +21,8 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')    
         
 @app.route("/")
-@mobile_template("{mobile/}home.html")
+# @mobile_template("{mobile/}home.html")
+@mobile_template("home.html")
 def home(template):
     return render_template(template)
 
